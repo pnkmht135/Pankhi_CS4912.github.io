@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <style>
 img {
-  width: 400px;
   height: auto
+}
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 </style>
 <html>
-<body>
+<body bgcolor= #76a7bc>
 
 <h1>CS-4912 Webpage</h1>
 <p>Hi! This is my webpage for hosting the non-technical asssignments for CS-4912: Computer Vision.</p>
 <h2>Assignment 0: Investigating Photo Distortion</h2>
 <h3>Part 1: Human face from far and near</h3>
 <p>
-    Here we had to take a picture one of out friends from close up (and note the distorttions), 
+    Here we had to take a picture one of out friends from close up (and note the distortions), 
     and then for far away, zoomed in.<br>
-    Here is the first image, taken from close up with not zoom:<br>
-    <img src="CloseFace.jpeg" alt="Picture Taken Close to Camera">
-    <br>
-    And here is the second:<br>
-    <img src="FarFace.jpeg" alt="Picture Taken From Far">
-    <br>
-</p>
+    Here are the images, the first taken from close up without zoom and the second from a distance with zoom:</p>
+    <center>
+    <img src="CloseFace.jpeg" alt="A0 part 1 close"
+    width="300">
+    <img src="FarFace.jpeg" alt="A0 part1 far"
+    width="300">
+    </center>
 <h4>Why is it distorted?</h4>
 <p>
     My intuition about this distortion is that when close up, the ratio/between the distances of
@@ -39,12 +44,38 @@ img {
     parts of the face, such as the hairline, top of the forehead and sides of the face, to become obscured due to the round
     shape of the head, making certain parts of the face to be basically cut off. <br>
     I have drawn a simple diagram to illustrate this effect with the forehead and hairline.<br>
-    <img src="Diagram.jpeg" alt="Picture Taken From Far">
-    <img src="NormalDrawing.jpeg" alt="Picture Taken From Far">
-    <img src="DistortedDrawing.jpeg" alt="Picture Taken From Far">
+    <img src="Diagram.jpeg" alt="Diagram"
+    width="500">
+    <img src="NormalDrawing.jpeg" alt="Drawing of Normal view"
+    width="200">
+    <img src="DistortedDrawing.jpeg" alt="Drawing of distroted view"
+    width="210"><br>
+    As seen above, the hairline is just at the point where the rounded shape of the forehead infront of it partially 
+    obscures it, making the distorted image look as if the person hairline is farther back. This can also be observed
+    in the actual pictures.
 </p>
-<h3>My First Heading</h3>
-<p>My first paragraph.</p>
-
+<h3>Part 2: Architecture</h3>
+<p>
+    As mentioned previously, when taking a photo from far away with zoom, the discrepancies of size between objects 
+    closer and farther away from the camera decreases because the distance between objects relative to the distance
+    between the objects and the camera decreases.<br>
+    This discrepancy in sizes according to distance may cause undesired distortions as seen in the above section,
+    but it also gives a sense of depth to the image, as for the human eye closer objects appear larger as well. Thus,
+    the zoomed in image taken from far appears flatter.
+</p>
+<h3>Part 3: Chair in orthographic and perspective projection</h3>
+<p>
+    Here we were meant to capture a picture of some object (a chair) in both perspective and orthographich projection.
+    To obtain the orthographic projection, I took a zoomed in photo of the chair from a distance, and for the perspective
+    projection I took a regular photo from close up.<br>
+    Then we were to draw lines to highlight the straight edges. Here are the resultant pictures, first the perspective and then
+    the orthographic:
+</p>
+<center>
+    <img src="ChairPerspective.jpeg" alt="A0 part 3 perspective projection"
+    width="300">
+    <img src="ChairOrthographic.jpeg" alt="A0 part 3 orthographic projection"
+    width="300">
+</center>
 </body>
 </html>
