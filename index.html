@@ -42,24 +42,60 @@ p, h1, h2, h3, h4, h5, h6 {
     On top of this ther is also the path that the light rays take to reach the camera. From close by, the ray paths from the face to the lens would be much more acute
     while from far the rays follow a gentler, almost parallel slope. Because of this, in the close by situation, some 
     parts of the face, such as the hairline, top of the forehead and sides of the face, to become obscured due to the round
-    shape of the head, making certain parts of the face to be basically cut off. <br>
-    I have drawn a simple diagram to illustrate this effect with the forehead and hairline.<br>
-    <img src="Diagram.jpeg" alt="Diagram"
-    width="500">
-    <img src="NormalDrawing.jpeg" alt="Drawing of Normal view"
-    width="200">
-    <img src="DistortedDrawing.jpeg" alt="Drawing of distroted view"
-    width="210"><br>
-    As seen above, the hairline is just at the point where the rounded shape of the forehead infront of it partially 
-    obscures it, making the distorted image look as if the person hairline is farther back. This can also be observed
-    in the actual pictures.
+    shape of the head, making certain parts of the face to be basically cut off.
 </p>
-<h3>Part 2: Architecture</h3>
+<p>
+    To illustrate the point about size distrotion and distances between the camera and objects, Lets assume that the camera is a pinhole
+    camera (they are not really) like what was discussed in class. Here is the relavant diagram from the slides:
+</p>
+<center>
+    <img src="SlidesDiagram.png" alt="Diagram"
+    width="700">
+</center>
+<p>
+    Say that there are 2 object, A and B, whose height is the same (1 meter), and they are 1 meter apart from 
+    eachother on the x-axis. <br>
+    Say we take two different pictures each with the same focal distance f=1m,
+    first with a camera placed such that its distance from A is Z<sub>A1</sub>=1 meter and distance from B 
+    is Z<sub>B1</sub>=2 meters. Here we see that the height of A y<sub>A1</sub>=-(-1)*1/1=1m and the height
+    of B is y<sub>A1</sub>=-(-1)*1/2=0.5m. Thus the difference in the heights of A and B in this picutre is 0.5m
+    <br><br>
+    Now say that we take a second picure where the same campera is placed such that its distance from A is 
+    Z<sub>A2</sub>=10 meters, and from B is Z<sub>B2</sub>=11 meters. How the heights in the image are 
+    y<sub>A1</sub>=-(-1)*1/10=0.1m, and y<sub>A1</sub>=-(-1)*1/11=0.09m. Only a difference in height of 0.01m in the picture.
+</p>
+<p>
+    How does this work with the face? Lets assume My face is a flat plane except for my nose. My face is about 21 cm tall, 
+    the tip of my nose is elivated by about 2 cm, and my nose is about 5cm tall (probably innacurate measurement).
+    (for simplicity ignore the sloped shape of the nose). So (assuming focal distance of 1cm) if I take a photo of myself 
+    with the camera 15cm away from the plane of my face, my head would appear -(-21)*1/15=1.4cm tall in the image, while my nose
+    will appear -(-5)*1/12=0.42cm tall.<br>
+    If I took the image from 1000cm away instead, the heights would be -(-21)*1/1000=0.021, and -(-5)*1/998=0.005
+    (to 2 d.p).<br>
+    In the first image, the ratio of my face length:nose length= 1.4/0.42=3.33 while in the second it would be 0.021/0.005=4.2, 
+    which is propably a noticable difference and matches what we see in the real images.
+</p>
+<h3>Part 2: Long path</h3>
+<p>
+    Here we where meant to capture a scene of a long path, first from far, zoomed in and then from normally
+    from a close distance. Here are the two resulting images:
+</p>
+<center>
+    <img src="FarPath.jpeg" alt="A0 part 2 far"
+    width="300">
+    <img src="ClosePath.jpeg" alt="A0 part1 close"
+    width="300">
+</center>
+<h4>Why is the first image flat looking?</h4>
 <p>
     As mentioned previously, when taking a photo from far away with zoom, the discrepancies of size between objects 
-    closer and farther away from the camera decreases because the distance between objects relative to the distance
-    between the objects and the camera decreases.<br>
-    This discrepancy in sizes according to distance may cause undesired distortions as seen in the above section,
+    closer and farther away from the camera (where closer objects appear larger) decreases because the distance between objects and eachother
+    relative to the distance between the objects and the camera decreases.<br>
+    See how in the first image, the diference between the size of the path in the bottom of the picture/foreground and the top of the picture/background 
+    is less compared to the size difference seen in the second picture. See also that the trash cans seem larger compared to the rest 
+    of the image in the second picture compared to the first, even though the trashcans have relatively similar positions in the frames of
+    both pictures overall.<br>
+    This discrepancy in sizes according to distance may cause undesired distortions as seen in the first section,
     but it also gives a sense of depth to the image, as for the human eye closer objects appear larger as well. Thus,
     the zoomed in image taken from far appears flatter.
 </p>
