@@ -14,11 +14,10 @@ p, h1, h2, h3, h4, h5, h6 {
 <body bgcolor= #76a7bc>
 
 <h1>CS-4912 Webpage</h1>
-<p>Hi! This is my webpage for hosting the non-technical asssignments for CS-4912: Computer Vision.</p>
 <h2>Assignment 0: Investigating Photo Distortion</h2>
 <h3>Part 1: Human face from far and near</h3>
 <p>
-    Here we had to take a picture one of out friends from close up (and note the distortions), 
+    We had to take a picture one of our friends from close up (and note the distortions), 
     and then for far away, zoomed in.<br>
     Here are the images, the first taken from close up without zoom and the second from a distance with zoom:</p>
     <center>
@@ -31,18 +30,11 @@ p, h1, h2, h3, h4, h5, h6 {
 <p>
     My intuition about this distortion is that when close up, the ratio/between the distances of
     different parts of the face and the camera is much more significant, since the overall the face's 
-    distance from the camera is small (i.e distance vertical to plane of camera lense), the minute differenes 
-    between the distances of particular parts of the face, such as the nose jutting out towards the camera 
-    the forehead sloping away from the camera become more significant. <br>
+    distance from the camera is small (i.e distance vertical to plane of camera lense) and because objects that are relatively close to the camera appear bigger.
+    So, when you take a close up photo the nose, for example, will be so much closer to the camera than the rest of the face that it looks 
+    huge. The minute differenes between the elavations of particular parts of the face, become more significant. <br>
     On the other hand, when the whole face is farther away, these minute differences in the elivation of the face
-    become neglegible in comaprison to the total distance of the face from the camera.<br>
-    Since objects that are relatively close to the camera appear bigger, this would led to the close up image 
-    being distorted such that parts of the face closer to the camera, such as the nose and chin, appear disproportionately
-    bigger. <br>
-    On top of this ther is also the path that the light rays take to reach the camera. From close by, the ray paths from the face to the lens would be much more acute
-    while from far the rays follow a gentler, almost parallel slope. Because of this, in the close by situation, some 
-    parts of the face, such as the hairline, top of the forehead and sides of the face, to become obscured due to the round
-    shape of the head, making certain parts of the face to be basically cut off.
+    become neglegible in comaprison to the total distance of the face from the camera, the face effectively becomes a flat plane.
 </p>
 <p>
     To illustrate the point about size distrotion and distances between the camera and objects, Lets assume that the camera is a pinhole
@@ -66,7 +58,7 @@ p, h1, h2, h3, h4, h5, h6 {
 </p>
 <p>
     How does this work with the face? Lets assume My face is a flat plane except for my nose. My face is about 21 cm tall, 
-    the tip of my nose is elivated by about 2 cm, and my nose is about 5cm tall (probably innacurate measurement).
+    the tip of my nose is elivated by about 2 cm, and my nose is about 5cm tall (probably innacurate measurement)
     (for simplicity ignore the sloped shape of the nose). So (assuming focal distance of 1cm) if I take a photo of myself 
     with the camera 15cm away from the plane of my face, my head would appear -(-21)*1/15=1.4cm tall in the image, while my nose
     will appear -(-5)*1/12=0.42cm tall.<br>
@@ -83,7 +75,7 @@ p, h1, h2, h3, h4, h5, h6 {
 <center>
     <img src="FarPath.jpeg" alt="A0 part 2 far"
     width="300">
-    <img src="ClosePath.jpeg" alt="A0 part1 close"
+    <img src="ClosePath.jpeg" alt="A0 part 2 close"
     width="300">
 </center>
 <h4>Why is the first image flat looking?</h4>
