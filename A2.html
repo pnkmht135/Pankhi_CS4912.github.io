@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<style>
+img {
+  height: auto
+}
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+</style>
+<html>
+<body bgcolor= #76a7bc>
+
+<h1>CS-4912 Webpage</h1>
+<h2>Assignment 2: Feature stuff</h2>
+<h3>Part 1: Corner detection</h3>
+<p>
+   We had to take a picture of a building with alot of corners and first annotate the corners by hand to create a ground truth, 
+   and them use Harris corner detector at multiple different thresholds to compare against the ground truth.<br>
+   Here is the hand annotated image of the building. I used MS paint to mark 334 corners with single red pixels. These pixels are small and difficult to see but they are there.
+    <center>
+    <img src="A2 images/GroundtruthImage_A2.png" alt="A2 ground truth"
+    width="900">
+    </center>
+<h4>Running Harris corner detection and checking against ground truth</h4>
+<p>
+    Here I chose 9 different thresholds to display the results of, that being the threshold values of 0.005 to 0.75 into the maximum
+    response. These images are plotted below. 
+</p>
+<center>
+    <img src="A2 images/HarrisPlots.png" alt="Harris plots">
+</center>
+<p>
+    For each of these, the false postive, true positive and false negative values were counted and used to calculate the precision and recall.
+    For calculating the TP, FP and FN values, I considered that predicted values that are within a distance of 3 pixels from any ground truth value to be a correct prediction.
+<center>
+    <table  border="1">
+  <tr>
+    <th>threshold Value</th>
+    <th>Number of predictions</th>
+    <th>True Positive</th>
+    <th>False Positive</th>
+    <th>False Negative</th>
+    <th>Precision</th>
+    <th>Recall</th>
+  </tr>
+  <tr>
+<td>0.005</td>
+<td>5098</td>
+<td>711</td>
+<td>4387</td>
+<td>143</td>
+<td>0.1395</td>
+<td>0.8326</td>
+  </tr>
+  <tr>
+<td>0.0075</td>
+<td>3672</td>
+<td>557</td>
+<td>3115</td>
+<td>170</td>
+<td>0.1517</td>
+<td>0.7662</td>
+  </tr>  <tr>
+<td>0.01</td>
+<td>2823</td>
+<td>432</td>
+<td>2391</td>
+<td>187</td>
+<td>0.1530</td>
+<td>0.6989</td>
+  </tr>  <tr>
+<td>0.025</td>
+<td>1252</td>
+<td>200</td>
+<td>1052</td>
+<td>254</td>
+<td>0.1597</td>
+<td>0.4405</td>
+  </tr>  <tr>
+<td>0.05</td>
+<td>657</td>
+<td>96</td>
+<td>561</td>
+<td>289</td>
+<td>0.1461</td>
+<td>0.2494</td>
+  </tr>  <tr>
+<td>0.075</td>
+<td>450</td>
+<td>63</td>
+<td>387</td>
+<td>305</td>
+<td>0.1400</td>
+<td>0.1712</td>
+  </tr>  <tr>
+<td>0.1</td>
+<td>330</td>
+<td>44</td>
+<td>286</td>
+<td>315</td>
+<td>0.1333</td>
+<td>0.1226</td>
+  </tr>  <tr>
+<td>0.25</td>
+<td>112</td>
+<td>13</td>
+<td>99</td>
+<td>325</td>
+<td>0.1161</td>
+<td>0.0385</td>
+  </tr>  <tr>
+<td>0.5</td>
+<td>42</td>
+<td>0</td>
+<td>42</td>
+<td>334</td>
+<td>0</td>
+<td>0</td>
+  </tr><tr>
+<td>0.75</td>
+<td>12</td>
+<td>0</td>
+<td>12</td>
+<td>334</td>
+<td>0</td>
+<td>0</td>
+  </tr>
+</table></center>
+</p>
+<h4>Plotting precision and recall curves against threshold value, values taken between 0.005 and 0.75 into maximum response.</h4>
+<p>
+    Find the plot picured below
+</p>
+<center>
+    <img src="A2 images/PRcurves.png" alt="A0 part 2 far"
+    width="300">
+</center>
+<h3>Part 2: SIFT time!!</h3>
+<p>
+    Here we had to take a set of images provided, extract the keypoints and descriptions for each and do the following:
+</p>
+<h4>Matches between consequetive images</h4>
+<p>
+    For this, we had to find the matches between each consequitive pair of images and then calculate the "total cost"
+    for the matches among the consequitive pairs. <br>
+    Here I took total cost to be total distance (cost) between each matched feature pair between each image pair, summed over all image pairs and match pairs.<br>
+    The average distance between two matched featurs between 2 consequitive images was 255.95, and the total
+    distances summed for all matches for all consequitive pairs was 4607.13.
+</p>
+<p>
+    Next we were to do the same for 19 random pairs of images. <br>
+    Here the average distance between two matched features between two random images was 291.84, 
+    and the total distance between matched features over all random image pairs was 100075575.50.<br>
+    Here we see that the total and average costs between consequetive images compared to random images 
+    was a lot less. This likely because the images were taken in real time order, depicting the camera moving around the 
+    mulch bags with each next image. Therefore, the consequetive images are most similar to than to a random pair,
+    as the consequetive images were taken closer together in time and space.
+<br>
+    Due to this, the consequetive images would have more similar, closely matching features compared to a 
+    pair of random images, since the amount of real world rotation and camera movement between them would be less.
+    This results in less "cost" of differences between matched features in consequetive images compared to non-consequetive images.
+</p>
+</body>
+</html>
